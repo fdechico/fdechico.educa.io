@@ -27,8 +27,7 @@ Os usuários podem encontrar ajuda sobre o projeto nas seguintes formas:
 
 ## Links Importantes
 - [Repositório do GitHub](https://github.com/fdechico?tab=repositories)
-- [Página no GitHub Pages](https://github.com/fdechico/fdechico.github.io)
-- [Vídeo de Apresentação](https://drive.google.com/file/d/1rPw550jvFOvDoJhjKv7h8xM2bAFEZG0O/view?usp=drive_link)
-
+- [Página no GitHub Pages](https://github.com/fdechico/fdechico.educa.io)
+- [Vídeo de Apresentação](https://drive.google.com/file/d/18peWRqYAFUlLM4LjoNF_OsH1glFwHHUf/view?usp=drive_link)
 ## Contribuições
 Contribuições são bem-vindas! Sinta-se à vontade para abrir uma issue ou enviar um pull request.
