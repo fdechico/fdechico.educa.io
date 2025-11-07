@@ -1,1 +1,1003 @@
 # fdechico.educa.io
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Ensino Remoto Gratuito</title>
+    <style>
+        /* Reset e Configurações Gerais */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f8f9fa;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: linear-gradient(135deg, #4a90e2, #357abd);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: bold;
+        }
+
+        /* Navegação */
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+
+        nav a:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        /* Main Content */
+        main {
+            min-height: calc(100vh - 200px);
+            padding: 2rem 0;
+        }
+
+        /* Seção Hero */
+        .hero {
+            text-align: center;
+            padding: 3rem 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            margin-bottom: 3rem;
+        }
+
+        .hero h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Ícones de Áreas */
+        .areas-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+            text-align: center;
+        }
+
+        .area-icon {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .area-icon:hover {
+            transform: translateY(-5px);
+        }
+
+        .area-icon i {
+            font-size: 3rem;
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        /* Caixas de Informações */
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .info-box {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            border-left: 5px solid #4a90e2;
+        }
+
+        .info-box h3 {
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        /* Imagens dos Cursos */
+        .courses-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .course-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .course-info {
+            padding: 1.5rem;
+        }
+
+        .course-info h3 {
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .course-info p {
+            color: #666;
+            font-size: 0.9rem;
+        }
+
+        /* Links Rápidos */
+        .quick-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin: 3rem 0;
+        }
+
+        .quick-link {
+            background: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: 500;
+            transition: background 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .quick-link:hover {
+            background: #357abd;
+        }
+
+        /* Formulário de Cadastro */
+        .registration-section {
+            background: white;
+            padding: 3rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            max-width: 600px;
+            margin: 3rem auto;
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #333;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.8rem;
+            border: 2px solid #e1e5e9;
+            border-radius: 5px;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: #4a90e2;
+        }
+
+        .btn {
+            background: #4a90e2;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: inline-block;
+            text-decoration: none;
+        }
+
+        .btn:hover {
+            background: #357abd;
+        }
+
+        .btn-secondary {
+            background: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+
+        /* Página Admin */
+        .admin-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-form {
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 2rem;
+        }
+
+        .admin-controls {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+
+        .search-input {
+            flex: 1;
+            min-width: 200px;
+        }
+
+        .user-list {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .user-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid #e1e5e9;
+        }
+
+        .user-item:last-child {
+            border-bottom: none;
+        }
+
+        .user-info {
+            flex: 1;
+        }
+
+        .user-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-top: 0.25rem;
+        }
+
+        .delete-btn {
+            background: #dc3545;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 3px;
+            cursor: pointer;
+            font-size: 0.9rem;
+        }
+
+        .delete-btn:hover {
+            background: #c82333;
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 3rem;
+            color: #666;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #333;
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .footer-section h3 {
+            color: #4a90e2;
+            margin-bottom: 1rem;
+            font-family: 'Georgia', serif;
+        }
+
+        .team-members {
+            background: #444;
+            padding: 1rem;
+            border-radius: 5px;
+            margin-top: 1rem;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            nav ul {
+                justify-content: center;
+            }
+
+            .hero h2 {
+                font-size: 2rem;
+            }
+
+            .info-grid,
+            .courses-gallery {
+                grid-template-columns: 1fr;
+            }
+
+            .admin-controls {
+                flex-direction: column;
+            }
+
+            .user-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .container {
+                padding: 0 15px;
+            }
+
+            .hero {
+                padding: 2rem 1rem;
+            }
+
+            .hero h2 {
+                font-size: 1.5rem;
+            }
+
+            .registration-section,
+            .admin-form {
+                padding: 1.5rem;
+            }
+        }
+
+        /* Animações */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Cabeçalho -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <h1>🌟 Educa Livre</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#courses">Cursos</a></li>
+                        <li><a href="#register">Cadastro</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                        <li><a href="#" id="adminLink" onclick="showAdminPage()">👨‍💼 Admin</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main id="mainContent">
+        <!-- Seção Hero -->
+        <section class="hero fade-in">
+            <div class="container">
+                <h2>Educação de Qualidade para Todos</h2>
+                <p>Descubra nosso serviço de ensino remoto gratuito que promove igualdade de oportunidades através de cursos e materiais educativos acessíveis a todos os públicos.</p>
+            </div>
+        </section>
+
+        <!-- Áreas de Conhecimento -->
+        <section class="container">
+            <div class="areas-grid">
+                <div class="area-icon">
+                    <i>🔬</i>
+                    <h3>Ciências</h3>
+                    <p>Explorar o mundo da ciência e tecnologia</p>
+                </div>
+                <div class="area-icon">
+                    <i>🎨</i>
+                    <h3>Artes</h3>
+                    <p>Desenvolver criatividade e expressão artística</p>
+                </div>
+                <div class="area-icon">
+                    <i>💻</i>
+                    <h3>Tecnologia</h3>
+                    <p>Aprender programação e desenvolvimento</p>
+                </div>
+                <div class="area-icon">
+                    <i>📚</i>
+                    <h3>Humanidades</h3>
+                    <p>Estudar história, filosofia e línguas</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Informações e Depoimentos -->
+        <section class="container">
+            <div class="info-grid">
+                <div class="info-box">
+                    <h3>🚀 Nossa Missão</h3>
+                    <p>Proporcionar educação de qualidade gratuita para todos, promovendo a igualdade de oportunidades e contribuindo para os Objetivos de Desenvolvimento Sustentável da ONU, especialmente o ODS 4 - Educação de Qualidade.</p>
+                </div>
+                <div class="info-box">
+                    <h3>💬 Depoimento</h3>
+                    <p>"A Educa Livre transformou minha vida! Pude aprender programação do zero e hoje trabalho na área de TI. É incrível ter acesso a tanto conhecimento de qualidade de forma gratuita!"</p>
+                    <p><strong>- Maria Silva, Estudante</strong></p>
+                </div>
+                <div class="info-box">
+                    <h3>📊 Nossos Números</h3>
+                    <p>+10.000 alunos matriculados • 50+ cursos disponíveis • 100% gratuito • Certificados reconhecidos</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria de Cursos -->
+        <section class="container">
+            <h2 style="text-align: center; margin-bottom: 2rem; font-family: 'Georgia', serif; color: #4a90e2;">Cursos Disponíveis</h2>
+            <div class="courses-gallery">
+                <div class="course-card">
+                    <div style="background: linear-gradient(45deg, #ff6b6b, #ee5a24); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;"></div>
+                    <div class="course-info">
+                        <h3>Introdução à Programação</h3>
+                        <p>Aprenda os fundamentos da programação com Python e JavaScript</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div style="background: linear-gradient(45deg, #4ecdc4, #44a08d); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">📖</div>
+                    <div class="course-info">
+                        <h3>Literatura Brasileira</h3>
+                        <p>Conheça as principais obras e autores da literatura nacional</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div style="background: linear-gradient(45deg, #45b7d1, #96c93d); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🎨</div>
+                    <div class="course-info">
+                        <h3>Desenho Artístico</h3>
+                        <p>Domine técnicas de desenho e composição visual</p>
+                    </div>
+                </div>
+                <div class="course-card">
+                    <div style="background: linear-gradient(45deg, #f093fb, #f5576c); height: 200px; display: flex; align-items: center; justify-content: center; color: white; font-size: 3rem;">🔬</div>
+                    <div class="course-info">
+                        <h3>Química Geral</h3>
+                        <p>Entenda os princípios fundamentais da química</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links Rápidos -->
+        <section class="container">
+            <div class="quick-links">
+                <a href="#" class="quick-link">📚 Iniciar Curso Gratuito</a>
+                <a href="#" class="quick-link">🎓 Ver Todos os Cursos</a>
+                <a href="#register" class="quick-link">✍️ Fazer Cadastro</a>
+                <a href="#" class="quick-link">📖 Baixar Materiais</a>
+            </div>
+        </section>
+
+        <!-- Seção de Cadastro -->
+        <section id="register" class="container">
+            <div class="registration-section fade-in">
+                <h2 style="text-align: center; margin-bottom: 2rem; color: #4a90e2; font-family: 'Georgia', serif;">Cadastro Gratuito</h2>
+                <form id="registrationForm">
+                    <div class="form-group">
+                        <label for="nome">Nome Completo *</label>
+                        <input type="text" id="nome" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail *</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="senha">Senha *</label>
+                        <input type="password" id="senha" name="senha" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="interesse">Área de Interesse *</label>
+                        <select id="interesse" name="interesse" required>
+                            <option value="">Selecione uma área</option>
+                            <option value="tecnologia">Tecnologia e Programação</option>
+                            <option value="artes">Artes e Design</option>
+                            <option value="ciencias">Ciências</option>
+                            <option value="humanidades">Humanidades</option>
+                            <option value="negocios">Negócios e Empreendedorismo</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comentarios">Comentários</label>
+                        <textarea id="comentarios" name="comentarios" rows="4" placeholder="Conte-nos sobre seus objetivos educacionais..."></textarea>
+                    </div>
+                    <div style="text-align: center;">
+                        <button type="submit" class="btn">Criar Conta Gratuita</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Página Admin (Ocultada inicialmente) -->
+    <div id="adminPage" style="display: none;">
+        <header style="background: linear-gradient(135deg, #4a90e2, #357abd); color: white; padding: 1rem 0; box-shadow: 0 2px 5px rgba(0,0,0,0.1);">
+            <div class="container">
+                <div class="header-content">
+                    <div class="logo">
+                        <h1>🌟 Educa Livre - Admin</h1>
+                    </div>
+                    <nav>
+                        <ul>
+                            <li><a href="#" onclick="showMainPage()" style="color: white; text-decoration: none;">← Voltar ao Site</a></li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </header>
+
+        <main class="admin-container" style="padding: 2rem 0;">
+            <!-- Formulário Admin -->
+            <div class="admin-form">
+                <h2 style="color: #4a90e2; margin-bottom: 1.5rem; font-family: 'Georgia', serif;">Cadastro de Usuários</h2>
+                
+                <!-- Controles Admin -->
+                <div class="admin-controls">
+                    <div class="form-group search-input">
+                        <label for="searchInput">🔍 Pesquisar Usuários</label>
+                        <input type="text" id="searchInput" placeholder="Digite nome ou e-mail para pesquisar..." onkeyup="filterUsers()">
+                    </div>
+                    <button class="btn" onclick="clearForm()" style="align-self: flex-end; padding: 0.8rem 1.5rem;">🧹 Limpar Campos</button>
+                </div>
+
+                <!-- Formulário de Cadastro -->
+                <form id="adminForm">
+                    <div class="form-group">
+                        <label for="adminNome">Nome do Usuário *</label>
+                        <input type="text" id="adminNome" name="adminNome" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="adminEmail">E-mail *</label>
+                        <input type="email" id="adminEmail" name="adminEmail" required>
+                    </div>
+                    <div style="display: flex; gap: 1rem; justify-content: flex-end; flex-wrap: wrap;">
+                        <button type="button" class="btn btn-secondary" onclick="clearForm()">Cancelar</button>
+                        <button type="submit" class="btn" id="cadastrarBtn">Cadastrar Usuário</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de Usuários -->
+            <div class="user-list">
+                <div id="userList">
+                    <div class="empty-state">
+                        <h3>Nenhum usuário cadastrado</h3>
+                        <p>Cadastre o primeiro usuário utilizando o formulário acima.</p>
+                    </div>
+                </div>
+                
+                <!-- Controles da Lista -->
+                <div style="padding: 1rem 1.5rem; background: #f8f9fa; border-top: 1px solid #e1e5e9; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                    <div style="color: #666;">
+                        <span id="totalUsers">0</span> usuário(s) cadastrado(s)
+                    </div>
+                    <div>
+                        <button class="btn btn-secondary" onclick="clearAllUsers()" style="padding: 0.5rem 1rem;">🗑️ Excluir Todos</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <footer style="background: #333; color: white; padding: 2rem 0; margin-top: 3rem;">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Sobre a Plataforma</h3>
+                        <p>Educa Livre - Educação gratuita para todos, promovendo igualdade de oportunidades através do conhecimento.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contato</h3>
+                        <p>📧 contato@educalivre.com<br>📱 (11) 99999-9999<br>🌐 www.educalivre.com</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Redes Sociais</h3>
+                        <p>📘 Facebook<br>🐦 Twitter<br>📸 Instagram</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Equipe de Desenvolvimento</h3>
+                        <div class="team-members">
+                            <p><strong>João Silva</strong> - Desenvolvedor Front-end<br>
+                            <strong>Maria Santos</strong> - Designer UI/UX<br>
+                            <strong>Pedro Costa</strong> - Gerente de Projeto<br>
+                            <strong>Ana Oliveira</strong> - Coordenadora Educacional</p>
+                        </div>
+                    </div>
+                </div>
+                <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #555;">
+                    <p>&copy; 2024 Educa Livre. Todos os direitos reservados. | Projeto desenvolvido para fins educacionais.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <!-- Rodapé Principal -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Sobre a Plataforma</h3>
+                    <p>Educa Livre - Educação gratuita para todos, promovendo igualdade de oportunidades através do conhecimento acessível e de qualidade.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Contato</h3>
+                    <p>📧 contato@educalivre.com<br>📱 (11) 99999-9999<br>📍 São Paulo, SP - Brasil</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Links Úteis</h3>
+                    <p><a href="#" style="color: #4a90e2;">Política de Privacidade</a><br>
+                    <a href="#" style="color: #4a90e2;">Termos de Uso</a><br>
+                    <a href="#" style="color: #4a90e2;">Perguntas Frequentes</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Equipe de Desenvolvimento</h3>
+                    <div class="team-members">
+                        <p><strong>João Silva</strong><br>Desenvolvedor Front-end<br>
+                        <strong>Maria Santos</strong><br>Designer UI/UX<br>
+                        <strong>Pedro Costa</strong><br>Gerente de Projeto<br>
+                        <strong>Ana Oliveira</strong><br>Coordenadora Educacional</p>
+                    </div>
+                </div>
+            </div>
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #555;">
+                <p>&copy; 2024 Educa Livre. Todos os direitos reservados. | Projeto desenvolvido para fins educacionais e alinhado aos ODS da ONU.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // === FUNÇÕES DA PÁGINA PRINCIPAL ===
+        
+        // Formulário de Cadastro Principal
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Simular envio bem-sucedido
+            const formData = new FormData(this);
+            const userData = Object.fromEntries(formData);
+            
+            // Mostrar mensagem de sucesso
+            alert('Cadastro realizado com sucesso! Você será direcionado para a página de login.');
+            
+            // Limpar formulário
+            this.reset();
+            
+            // Simular redirecionamento (em um ambiente real, seria um redirecionamento)
+            console.log('Redirecionando para login...', userData);
+        });
+
+        // === FUNÇÕES DA PÁGINA ADMIN ===
+        
+        // Variáveis globais
+        let users = JSON.parse(localStorage.getItem('educalivre_users')) || [];
+
+        // Mostrar página Admin
+        function showAdminPage() {
+            document.getElementById('mainContent').style.display = 'none';
+            document.getElementById('adminPage').style.display = 'block';
+            loadUsers();
+        }
+
+        // Mostrar página principal
+        function showMainPage() {
+            document.getElementById('adminPage').style.display = 'none';
+            document.getElementById('mainContent').style.display = 'block';
+        }
+
+        // Carregar usuários do LocalStorage
+        function loadUsers() {
+            displayUsers(users);
+            updateTotalUsers();
+        }
+
+        // Exibir usuários na lista
+        function displayUsers(userArray) {
+            const userList = document.getElementById('userList');
+            
+            if (userArray.length === 0) {
+                userList.innerHTML = `
+                    <div class="empty-state">
+                        <h3>Nenhum usuário cadastrado</h3>
+                        <p>Cadastre o primeiro usuário utilizando o formulário acima.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            userList.innerHTML = userArray.map((user, index) => `
+                <div class="user-item" data-index="${index}">
+                    <div class="user-info">
+                        <div style="font-weight: 500; color: #333;">${user.nome}</div>
+                        <div style="color: #666; font-size: 0.9rem;">${user.email}</div>
+                        <div class="user-date">${new Date(user.data).toLocaleDateString('pt-BR')} às ${new Date(user.data).toLocaleTimeString('pt-BR')}</div>
+                    </div>
+                    <button class="delete-btn" onclick="deleteUser(${index})" title="Excluir usuário">
+                        🗑️ Excluir
+                    </button>
+                </div>
+            `).join('');
+        }
+
+        // Cadastro de novo usuário
+        document.getElementById('adminForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const nome = document.getElementById('adminNome').value.trim();
+            const email = document.getElementById('adminEmail').value.trim();
+            
+            // Validação básica
+            if (!nome || !email) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+
+            if (!isValidEmail(email)) {
+                alert('Por favor, insira um e-mail válido.');
+                return;
+            }
+
+            // Verificar se o e-mail já existe
+            if (users.some(user => user.email.toLowerCase() === email.toLowerCase())) {
+                alert('Este e-mail já está cadastrado. Use um e-mail diferente.');
+                return;
+            }
+
+            // Criar novo usuário
+            const newUser = {
+                nome: nome,
+                email: email,
+                data: new Date().toISOString()
+            };
+
+            // Adicionar à lista
+            users.unshift(newUser);
+            
+            // Salvar no LocalStorage
+            localStorage.setItem('educalivre_users', JSON.stringify(users));
+            
+            // Limpar formulário
+            this.reset();
+            
+            // Mostrar mensagem de sucesso
+            alert('Usuário cadastrado com sucesso!');
+            
+            // Atualizar exibição
+            displayUsers(users);
+            updateTotalUsers();
+        });
+
+        // Validar e-mail
+        function isValidEmail(email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            return emailRegex.test(email);
+        }
+
+        // Limpar campos do formulário
+        function clearForm() {
+            document.getElementById('adminForm').reset();
+            alert('Campos limpos com sucesso!');
+        }
+
+        // Excluir um usuário específico
+        function deleteUser(index) {
+            if (confirm('Tem certeza que deseja excluir este usuário? Esta ação não pode ser desfeita.')) {
+                // Remover do array
+                users.splice(index, 1);
+                
+                // Salvar no LocalStorage
+                localStorage.setItem('educalivre_users', JSON.stringify(users));
+                
+                // Atualizar exibição
+                displayUsers(users);
+                updateTotalUsers();
+                
+                alert('Usuário excluído com sucesso!');
+            }
+        }
+
+        // Excluir todos os usuários
+        function clearAllUsers() {
+            if (users.length === 0) {
+                alert('Não há usuários para excluir.');
+                return;
+            }
+            
+            if (confirm(`Tem certeza que deseja excluir todos os ${users.length} usuário(s)? Esta ação não pode ser desfeita.`)) {
+                // Limpar array
+                users = [];
+                
+                // Limpar LocalStorage
+                localStorage.removeItem('educalivre_users');
+                
+                // Atualizar exibição
+                displayUsers(users);
+                updateTotalUsers();
+                
+                alert('Todos os usuários foram excluídos com sucesso!');
+            }
+        }
+
+        // Atualizar contador de usuários
+        function updateTotalUsers() {
+            document.getElementById('totalUsers').textContent = users.length;
+        }
+
+        // Filtrar usuários por pesquisa
+        function filterUsers() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase().trim();
+            
+            if (!searchTerm) {
+                displayUsers(users);
+                return;
+            }
+
+            const filteredUsers = users.filter(user => 
+                user.nome.toLowerCase().includes(searchTerm) || 
+                user.email.toLowerCase().includes(searchTerm)
+            );
+            
+            displayUsers(filteredUsers);
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Carregar usuários ao iniciar (se página admin estiver visível)
+            if (document.getElementById('adminPage').style.display === 'block') {
+                loadUsers();
+            }
+            
+            // Adicionar animação de fade-in para elementos
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('fade-in');
+                    }
+                });
+            }, observerOptions);
+
+            // Observar elementos para animação
+            document.querySelectorAll('.info-box, .course-card, .area-icon').forEach(el => {
+                observer.observe(el);
+            });
+        });
+
+        // Smooth scroll para links de âncora
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Validação em tempo real dos campos do formulário admin
+        ['adminNome', 'adminEmail'].forEach(fieldId => {
+            const field = document.getElementById(fieldId);
+            if (field) {
+                field.addEventListener('blur', function() {
+                    if (this.value.trim() === '') {
+                        this.style.borderColor = '#dc3545';
+                    } else {
+                        this.style.borderColor = '#4a90e2';
+                    }
+                });
+            }
+        });
+
+        // Feedback visual para botões
+        document.querySelectorAll('.btn, .delete-btn, .quick-link').forEach(btn => {
+            btn.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateY(-2px)';
+            });
+            
+            btn.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateY(0)';
+            });
+        });
+    </script>
+</body>
+</html>
